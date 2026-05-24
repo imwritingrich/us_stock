@@ -138,7 +138,7 @@ def analyze_stock(
 if __name__ == "__main__":
     import os
     print("Testing stock analysis with mock profile...")
-    api_key = "AIzaSyBReadh1N0DcGyatkop47n7uokTHCJay-c"
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     
     mock_profile = """
     ### FINANCIAL PROFILE: NVIDIA Corporation (NVDA)

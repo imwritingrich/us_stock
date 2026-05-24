@@ -196,7 +196,12 @@ def inject_custom_css():
 inject_custom_css()
 
 # Retrieve active settings from DB
-gemini_key = db.get_setting("gemini_api_key", "AIzaSyBReadh1N0DcGyatkop47n7uokTHCJay-c")
+gemini_key = db.get_setting("gemini_api_key", "")
+if not gemini_key:
+    # Secure fallback to Streamlit Secrets or Environment Variables
+    import os
+    gemini_key = st.secrets.get("gemini_api_key", st.secrets.get("GEMINI_API_KEY", os.environ.get("GEMINI_API_KEY", "")))
+
 sheet_url = db.get_setting("google_sheet_url", "https://docs.google.com/spreadsheets/d/1PSYb9wyqXkRZT8NJtna9749Fqb_Pb8mPxZITmKLXTuA/edit?usp=drive_link")
 gemini_model = db.get_setting("gemini_model", "gemini-2.5-pro")
 

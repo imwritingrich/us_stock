@@ -112,7 +112,7 @@ def init_db(db_path: str = DEFAULT_DB_PATH) -> None:
     
     # 3. Insert default settings (with INSERT OR IGNORE to prevent overwriting user edits)
     default_settings = [
-        ("gemini_api_key", "AIzaSyBReadh1N0DcGyatkop47n7uokTHCJay-c"),
+        ("gemini_api_key", ""),
         ("google_sheet_url", "https://docs.google.com/spreadsheets/d/1PSYb9wyqXkRZT8NJtna9749Fqb_Pb8mPxZITmKLXTuA/edit?usp=drive_link"),
         ("gemini_model", "gemini-2.5-flash")
     ]
