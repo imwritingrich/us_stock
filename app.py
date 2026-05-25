@@ -464,7 +464,7 @@ else:
             st.write("ระบบจะดึงงบการเงินล่าสุดและประเมินทางเทคนิค (MA50, MA200, RSI) ส่งให้โมเดล Gemini วิเคราะห์ตามกรอบการวิเคราะห์ 6 ขั้นตอนอย่างเป็นระบบ")
             
             # Check for dummy/default key
-            if not gemini_key or gemini_key == "AIzaSyBReadh1N0DcGyatkop47n7uokTHCJay-c":
+            if not gemini_key or gemini_key == "":
                 st.warning("⚠️ ตรวจพบว่ายังไม่ได้ตั้งค่า Gemini API Key หรือเป็นคีย์ตั้งต้น กรุณาอัปเดตคีย์ในหน้า '⚙️ ตั้งค่าระบบ (Settings)' ก่อนเริ่มวิเคราะห์เชิงลึกด้วย AI")
             
             btn_ai = st.button("🤖 เริ่มการวิเคราะห์ด้วย AI (Gemini Ingestion)", key=f"btn_ai_{ticker}", use_container_width=True, type="primary")
